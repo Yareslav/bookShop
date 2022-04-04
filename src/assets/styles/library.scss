@@ -1,0 +1,144 @@
+$green:#C2E7DA;
+$blue:#6290C3;
+$yellow:#F1FFE7;
+$black:#1A1B41;
+$red:#F32463;
+.library{
+	flex-direction: column;
+	width:100%;
+	justify-content: stretch !important;
+	&__button{
+		color: $yellow;
+		font-size: 20px;
+		font-weight: 800;
+		min-width: 235px;
+		height: 40px;
+		& img{
+			height: 30px;
+		}
+	}
+	&__row{
+		margin: 0 auto;
+		width: calc(100% - 40px);
+	}
+	&__form{
+		margin: 10px 0;
+		display: flex;
+		justify-content: flex-end;
+	}
+	&__container{
+		margin: 0 15px;
+		width:100%;
+		display: flex;
+		justify-content: flex-end;
+	}
+	&__inputMain{
+		width: calc(80% - 240px);
+		max-width: 500px;
+		min-width: 280px;
+	}
+	&__popup{
+		height: calc(100vh - 230px) !important;
+	}
+	&__line{
+		padding: 10px;
+		background-image: url("../images/room.webp");
+		background-size: cover;
+	}
+	&__bookShelf{
+		min-height: 120px;
+		margin-top: 10px;
+	}
+	&__title{
+		max-width: 80%;
+		overflow: hidden;
+	}
+	&__bookDrag{
+		width:100%;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		background-color: $green;
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+	}
+	&__controls{
+		justify-content: center !important;
+	}
+	&__dropDownInput{
+		width: 50%;
+		min-width: 280px;
+		max-width: 500px;
+	}
+	&__close{
+		width: 60px;
+		border-radius: 10px;
+		background-color: $blue;
+		height: 40px;
+		cursor: pointer;
+		& img{
+			height: 70%;
+		}
+		&:hover{
+			transition: all 0.3s ease;
+			border:2px solid $black;
+			box-sizing: border-box;
+		}
+	}
+	&__controls{
+		margin: 12px 0;
+		width:100%;
+		padding: 0 10px;
+		box-sizing: border-box;
+	}
+	@media(max-width:560px) {
+		&__container{
+			flex-direction: column;
+			align-items: flex-end;
+		}
+		&__inputMain{
+			width:100%;
+			margin-bottom: 10px;
+		}
+		&__title{
+			max-width: 100%;
+		}
+		&__top{
+			flex-direction: column;
+			gap: 10px;
+			align-items: flex-start;
+			& > div{
+				align-self: flex-end;
+			}
+		}
+		&__buttons{
+			flex-direction: column;
+			& >div:first-child{
+				align-self: flex-start;
+			}
+			& > div:last-child{
+				align-self: flex-end;
+			}
+		}
+	}
+}
+.blue{
+	background-color: $blue !important;
+}
+.black{
+	background-color: $black !important;
+}
+.green{
+	background-color: $green !important;
+}
+.left{
+	margin-left: 15px;
+}
+.right{
+	margin-right: 15px;
+}
+.addBooks{
+	& p{
+		margin-left: 15px;
+	}
+}

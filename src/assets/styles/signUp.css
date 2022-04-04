@@ -1,0 +1,46 @@
+.text {
+  color: #1A1B41;
+  margin-top: 6px;
+}
+
+.text span {
+  cursor: pointer;
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.big {
+  width: 60%;
+  max-width: 800px;
+  margin: 10px 0;
+}
+
+.align {
+  text-align: center;
+  width: 100%;
+}
+
+.password {
+  font-size: 18px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  margin-top: 5px;
+}
+
+.password div {
+  cursor: pointer;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.password p {
+  margin-left: 10px;
+  color: #1A1B41;
+}
+
+.password img {
+  width: 30px;
+}
+/*# sourceMappingURL=signUp.css.map */

@@ -1,0 +1,134 @@
+$green:#C2E7DA;
+$blue:#6290C3;
+$yellow:#F1FFE7;
+$black:#1A1B41;
+$red:#F32463;
+.preview{
+	width: 60%;
+	min-width: 360px;
+	max-width: 900px;
+	@media(max-width:1000px) {
+		width: 80%;
+	}
+	&__hidden{
+		max-height: 253px;
+		overflow:hidden;
+	}
+	&__stars{
+		width: 170px;
+		& > img{
+			width: 30px;
+		}
+	}
+	&__author{
+		color: $yellow;
+		font-size: calc(14px + (24 - 14) * (100vw / 1920));
+		@media(max-width:1920) {
+			font-size: 24px;
+		}
+	}
+	&__container{
+		display: flex;
+		align-items: flex-start !important;
+		gap: 10px;
+	}
+	&__availability{
+		width: 70%;
+		max-width: 400px;
+		min-width: 330px;
+		@media(max-width:470px) {
+			flex-direction: column;
+			gap: 10px;
+			align-items:flex-start !important;
+		}
+		& p{
+			margin-left: 8px;
+		}
+		& > div{
+			justify-content: stretch;
+		}
+		&  img{
+			width: 30px;
+		}
+	}
+	&__titles{
+		display: flex;
+		flex-direction: column;
+		gap:14px;
+	}
+	&__row{
+			font-size: 20px;
+			color: $yellow;
+			font-weight: 600;
+		& span {
+			font-weight: 400;
+			font-size: 18px;
+			color: $black;
+			margin-left: 7px;
+		}
+	}
+	&__block{
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		width: 30%;
+		position: relative;
+		align-self: center;
+	}
+	&__mainInfo{
+		width: 70%;
+	}
+	&__button{
+		width:100%;
+		margin-top: 10px;
+		height: 50px;
+		max-width: 300px;
+	}
+	&__description{
+		color: $green;
+		margin-top: 10px;
+		font-size: 20px;
+	}
+	&__mainImg{
+		object-fit: contain;
+			width: 100%;
+			max-width: 300px;
+	}
+	@media(max-width:800px) {
+		&__block , &__mainInfo{
+			width:100%;
+		}
+		&__mainImg{
+			width: 70%;
+		}
+		&__container{
+			flex-direction: column;
+		}
+	}
+	&__textButton{
+		width: 240px;
+		height: 40px;
+		align-self: flex-end;
+		margin-top: 10px;
+		& img{
+			width: 20px;
+		}
+		& p{
+			margin-left: 10px;
+			color: $black;
+			font-weight: 800;
+		}
+	}
+	&__hearth{
+		position: relative !important;
+		transform: translate(0,0) !important;
+		margin-left: 10px;
+		margin-top: 8px;
+	}
+}
+.yellow{
+	background-color: $yellow !important;
+}
+.green{
+	background-color: $green !important;
+}

@@ -1,0 +1,120 @@
+$green:#C2E7DA;
+$blue:#6290C3;
+$yellow:#F1FFE7;
+$black:#1A1B41;
+$red:#F32463;
+.cabinet{
+	width:100%;
+	padding: 10px;
+	box-sizing: border-box;
+	align-items: flex-start !important;
+	&__contact{
+		justify-content: stretch;
+		width: 300px;
+		margin-right: 20px;
+	}
+	&__circle{
+		width: 300px;
+		height: 300px;
+		border-radius: 50%;
+		background-color: $blue;
+	}
+	&__photo{
+		border-radius: 50%;
+		width: 80%;
+		height: 80%;
+		object-fit: cover;
+	}
+	&__makePhoto{
+		width: 40px;
+		height: 40px;
+		background-color: $green;
+		border-radius: 50%;
+		position: absolute !important;
+		bottom: 28px;
+		right: 50px;
+		cursor: pointer;
+		&:hover{
+			transition: all 0.3s ease;
+			background-color: $yellow;
+		}
+		& img{
+			width: 80%;
+		}
+		& input{
+			min-width: 0;
+			width:100%;
+			height:100%;
+			position: absolute;
+			opacity: 0;
+			border-radius: 50%;
+		}
+	}
+	&__greenTitle{
+		color: $green;
+	}
+	&__logOut{
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+		img{
+			width: 50px;
+		}
+		p {
+			margin-left: 11px;
+		}
+	}
+	&__title{
+		font-size: 20px;
+		font-weight: 800;
+		color: $yellow;
+		& span{
+			color: $green;
+			font-weight: 400;
+		}
+	}
+	&-left{
+		margin-left: 25px;
+	}
+	&__liked{
+		width: calc(100% - 320px);
+	}
+	&__aligner{
+		min-width: 500px;
+		width: 50%;
+	}
+	&__body{
+		margin-top: 20px;
+	}
+	@media(max-width:1050px) {
+		&__header{
+			flex-direction: column;
+			align-items: flex-end !important;
+		}
+		&__aligner{
+			margin-top: 10px;
+			flex-direction: column;
+			gap: 10px;
+			align-items: flex-end !important;
+			min-width: 0;
+			width:100%;
+		}
+		&-left{
+			margin-left: 0;
+			width: 100%;
+		}
+	}
+	@media(max-width:870px) {
+		flex-direction: column;
+		align-items: center !important;
+		&__liked{
+			width:100%;
+		}
+	}
+	&__popup{
+		margin-top: 40px;
+	}
+}
+.margin{
+	margin-top: 12px;
+}

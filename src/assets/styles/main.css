@@ -1,0 +1,158 @@
+.main {
+  width: 100%;
+  height: calc(100vh - 103px);
+}
+
+.main__body {
+  height: 100%;
+  width: calc(100% - 300px);
+  background-color: #1A1B41;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.main__article {
+  min-height: calc(100vh - 103px);
+  width: 300px;
+  background: #6290C3;
+  overflow: auto;
+  -webkit-box-pack: stretch !important;
+      -ms-flex-pack: stretch !important;
+          justify-content: stretch !important;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: hidden;
+}
+
+.main__mainInput {
+  border: 3px solid #1A1B41;
+}
+
+.main__line {
+  width: 100%;
+  height: 3px;
+  background-color: #F1FFE7;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.main__title {
+  text-align: center;
+}
+
+.main__text {
+  color: #1A1B41;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.main-margin {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.main__radio {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #F1FFE7;
+  border: 3px solid #1A1B41;
+}
+
+.main__radio > * {
+  background-color: #1A1B41;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+}
+
+.main-left {
+  margin-left: 14px;
+}
+
+.main__radioButtons {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-gap: 10px;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.main__container {
+  font-size: 20px;
+  width: 100%;
+  color: #1A1B41;
+  font-weight: 800;
+}
+
+.main__container > p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.main__sorters {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.main__sorter > p {
+  margin-top: 5px;
+}
+
+.main__sortImage {
+  width: 40px;
+  cursor: pointer;
+}
+
+.main__loading {
+  width: 80px;
+  -webkit-animation: rotate infinite 1s linear;
+          animation: rotate infinite 1s linear;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 900px) {
+  .main__article {
+    position: fixed !important;
+    z-index: 10;
+    height: 100%;
+    top: 103px;
+    left: 0;
+  }
+  .main__body {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=main.css.map */

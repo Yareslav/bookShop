@@ -1,0 +1,39 @@
+$green:#C2E7DA;
+$blue:#6290C3;
+$yellow:#F1FFE7;
+$black:#1A1B41;
+$red:#F32463;
+.text{
+	color: $black;
+	margin-top: 6px;
+	span{
+		cursor: pointer;
+		font-weight: 900;
+		font-size: 18px;
+	}
+}
+.big{
+	width: 60%;
+	max-width: 800px;
+	margin: 10px 0;
+}
+.align{
+	text-align: center;
+	width:100%;
+}
+.password{
+	font-size: 18px;
+	justify-content: end;
+	margin-top: 5px;
+	& div{
+		cursor: pointer;
+		justify-content: end;
+	}
+	& p{
+		margin-left: 10px;
+		color: $black;
+	}
+	& img{
+		width: 30px;
+	}
+}

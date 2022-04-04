@@ -1,0 +1,196 @@
+.library {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  -webkit-box-pack: stretch !important;
+      -ms-flex-pack: stretch !important;
+          justify-content: stretch !important;
+}
+
+.library__button {
+  color: #F1FFE7;
+  font-size: 20px;
+  font-weight: 800;
+  min-width: 235px;
+  height: 40px;
+}
+
+.library__button img {
+  height: 30px;
+}
+
+.library__row {
+  margin: 0 auto;
+  width: calc(100% - 40px);
+}
+
+.library__form {
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.library__container {
+  margin: 0 15px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.library__inputMain {
+  width: calc(80% - 240px);
+  max-width: 500px;
+  min-width: 280px;
+}
+
+.library__popup {
+  height: calc(100vh - 230px) !important;
+}
+
+.library__line {
+  padding: 10px;
+  background-image: url("../images/room.webp");
+  background-size: cover;
+}
+
+.library__bookShelf {
+  min-height: 120px;
+  margin-top: 10px;
+}
+
+.library__title {
+  max-width: 80%;
+  overflow: hidden;
+}
+
+.library__bookDrag {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #C2E7DA;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.library__controls {
+  -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
+}
+
+.library__dropDownInput {
+  width: 50%;
+  min-width: 280px;
+  max-width: 500px;
+}
+
+.library__close {
+  width: 60px;
+  border-radius: 10px;
+  background-color: #6290C3;
+  height: 40px;
+  cursor: pointer;
+}
+
+.library__close img {
+  height: 70%;
+}
+
+.library__close:hover {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  border: 2px solid #1A1B41;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.library__controls {
+  margin: 12px 0;
+  width: 100%;
+  padding: 0 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media (max-width: 560px) {
+  .library__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  .library__inputMain {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .library__title {
+    max-width: 100%;
+  }
+  .library__top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 10px;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .library__top > div {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+  .library__buttons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .library__buttons > div:first-child {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+  .library__buttons > div:last-child {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+}
+
+.blue {
+  background-color: #6290C3 !important;
+}
+
+.black {
+  background-color: #1A1B41 !important;
+}
+
+.green {
+  background-color: #C2E7DA !important;
+}
+
+.left {
+  margin-left: 15px;
+}
+
+.right {
+  margin-right: 15px;
+}
+
+.addBooks p {
+  margin-left: 15px;
+}
+/*# sourceMappingURL=library.css.map */
