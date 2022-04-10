@@ -8,6 +8,7 @@ import "../../assets/styles/signIn.css";
 import Show from "../../assets/images/show.png";
 import Hide from "../../assets/images/hide.png";
 import {NavigateContext} from "../../App";
+import {WindowContext} from "../../App";
 const CreateSignInScreen = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
@@ -17,6 +18,7 @@ const CreateSignInScreen = () => {
     fullNameOrEmail: false,
     general: false,
   });
+  const manageWindow=useContext(WindowContext);
   const navigator = useNavigate();
   const navigate=useContext(NavigateContext);
 
@@ -55,7 +57,7 @@ const CreateSignInScreen = () => {
           "registrationData",
           JSON.stringify({ ...data, isSignedIn: true })
         );
-        alert("Welcome");
+        manageWindow("Welcome",false);
         navigate(navigator,"/cabinet");
       }
     }

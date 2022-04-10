@@ -7,6 +7,7 @@ import "../../assets/styles/signUp.css";
 import Show from "../../assets/images/show.png";
 import Hide from "../../assets/images/hide.png";
 import {NavigateContext} from "../../App";
+import {WindowContext} from "../../App";
 import {
   useNavigate
 } from "react-router-dom";
@@ -22,6 +23,7 @@ const CreateSignUpScreen=()=>{
 		email:false,
 		passwordCopy:false
 	});
+	const manageWindow=useContext(WindowContext);
 	const navigator=useNavigate();
 	const navigate=useContext(NavigateContext);
 	const submit=()=>{
@@ -38,7 +40,7 @@ const CreateSignUpScreen=()=>{
 				fullName,
 				photo:""
 			}));
-			alert("Account was succesfully created");
+			manageWindow("Account was succesfully created , just one more step",false);
 			navigate(navigator,"/signIn");
 		}
 	}

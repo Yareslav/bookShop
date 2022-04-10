@@ -1,7 +1,7 @@
 import Search from "../assets/images/search.png";
 import Cross from "..//assets/images/cross.png";
 import React,{useRef,useState,useContext,useEffect} from "react";
-const Input=({setData,placeholder,style="",functionality=()=>{},hidePassword,data})=>{
+const Input=({setData,placeholder,style="",functionality=()=>{},hidePassword,data,value})=>{
 	const [active,setActive]=useState(false);
 	const [focused,setFocused]=useState(false);
 	const input=useRef();
@@ -28,6 +28,7 @@ const Input=({setData,placeholder,style="",functionality=()=>{},hidePassword,dat
 		placeholder={placeholder}
 		onChange={changeHandler}
 		ref={input}
+		value={value}
 		onFocus={()=>setFocused(true)}
 		onBlur={()=>setFocused(false)}
 		/>
