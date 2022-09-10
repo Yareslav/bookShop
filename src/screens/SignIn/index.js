@@ -33,6 +33,7 @@ const CreateSignInScreen = () => {
     else errors[type] = conditions[type](value);
     setErrors({ ...errors });
   };
+
   const submit = () => {
     const isInputDataAnFullName = !conditions["fullName"](fullNameOrEmail);
 
@@ -63,6 +64,7 @@ const CreateSignInScreen = () => {
     }
     setErrors({ ...errors });
   };
+
   return (
     <Container style="content">
       <img className="screen__image" src={SignIn} />

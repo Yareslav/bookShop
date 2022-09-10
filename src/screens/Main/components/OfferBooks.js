@@ -25,7 +25,7 @@ const OfferBooks = () => {
         data: getBookField("categories"),
       }
     ].forEach(async ({ title, data }) => {
-      if (data.length == 0) return;
+      if (!data?.length) return;
       requestNumber--;
       let requestData;
       if (random(0, 1) == 0) {
@@ -39,6 +39,7 @@ const OfferBooks = () => {
     for (let i = 0; i < requestNumber; i++)
       request(randomTopics[i], randomTopics[i]);
   }, []);
+
   const sortByRatingOrNot = (items) => {
     if (random(0, 1) == 0) {
       items.sort(() => 0.5 - Math.random());
@@ -48,8 +49,9 @@ const OfferBooks = () => {
       });
     }
   };
+
   const filterBooksThatNotBelongsToFavorites = (items) => {
-    let mass = JSON.parse(localStorage.getItem("favoriteBooks"));
+    let mass = JSON.parse(localStorage.getItem("favoriteBooks")) || [];
     return items.filter((elem) => {
       for (let i = 0; i < mass.length; i++) {
         if (compare(mass[i], elem)) return false;
@@ -57,6 +59,7 @@ const OfferBooks = () => {
       return true;
     });
   };
+
   const request = async (mass, title) => {
     let results = [];
     try {
@@ -75,14 +78,16 @@ const OfferBooks = () => {
       ]);
     }
   };
+
   const getBookField = (key) => {
-    const mass = JSON.parse(localStorage.getItem("favoriteBooks"));
+    const mass = JSON.parse(localStorage.getItem("favoriteBooks")) || [];
     const result = [];
     mass.forEach((elem) => {
       if (elem[key] != "Unknown") result.push(elem[key]);
     });
     return result;
   };
+
   return data.map(({ title, elements }) => (
     <>
       <p className="title">{title}</p>

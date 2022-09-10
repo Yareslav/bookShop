@@ -23,9 +23,11 @@ const Article = ({setFoundItems, foundItems,setBookView,bookView,nothingFound,se
   const { searchActive, setSearchActive } = useContext(SearchContext);
   const {Sort} =useContext(SortContext);
   const requestTimeout = useRef();
+
   class Request {
     results=[];
     completedRequests=0;
+
     constructor() {
       clearTimeout(requestTimeout.current);
       if (bookName == "") return;
@@ -39,27 +41,34 @@ const Article = ({setFoundItems, foundItems,setBookView,bookView,nothingFound,se
 				this.search();
       }, 1500);
     }
+
     async search() {
       let totalIterations=0;
       let mass=[];
+
       try {
         const response=await this.request(0);
         let {items=[],totalItems}=await response.json();
         mass=items;
         if (totalItems==0) throw new Error("nothing was found");
+
         totalIterations=Math.ceil((maxResults>=totalItems ? totalItems : maxResults)/40);
         if (nothingFound) setNothingFound(false);
         this.addToLocalstorage();
-      } catch (error) {
+      }
+
+      catch (error) {
         setNothingFound(true);
         console.error(error);
       }
+
         mass=this.format(mass.slice(0,maxResults));
         this.results.push(...mass);
         if (totalIterations<2) this.onRequestFinished();
         else this.completedRequests=totalIterations-1;
         for (let i=1;i<totalIterations;i++) this.fastRequest(i);
     }
+
     async fastRequest(i) {
       let mass=[];
         try {
@@ -75,6 +84,7 @@ const Article = ({setFoundItems, foundItems,setBookView,bookView,nothingFound,se
         this.completedRequests--;
         if (this.completedRequests===0) this.onRequestFinished();
     }
+
     request(startIndex) {
       let options=[
         { data: author, type: "inauthor" },
@@ -85,37 +95,42 @@ const Article = ({setFoundItems, foundItems,setBookView,bookView,nothingFound,se
       const strWithDeletedSpaces=bookName.split(" ").join();
       return fetcher(strWithDeletedSpaces,options,bookType,startIndex);
     }
+
     format(items) {
       return items.map((elem)=>formater(elem));
     }
+
     onRequestFinished() {
       localStorage.setItem("searchData",JSON.stringify(this.results));
       this.deleteResultsWithSameKeys();
       setFoundItems([...this.results]);
       setLoading(false);
     }
+
     deleteResultsWithSameKeys() {
       let keys=this.results.map((elem,ind)=>({key:elem.key,id:ind}));
       let obj={};
       keys.forEach((elem)=>{
         if (obj[elem.key]) {
           this.results.splice(elem.id,1,0);
-          console.log("copy was found");
         }
         else obj[elem.key]=1;
       })
       this.results=this.results.filter((elem)=>elem!==0);
     }
+
     addToLocalstorage() {
-      const mass=JSON.parse(localStorage.getItem("previousTopics"));
+      const mass=JSON.parse(localStorage.getItem("previousTopics")) || [];
       if (mass.includes(bookName)) return;
       mass.push(bookName);
       localStorage.setItem("previousTopics",JSON.stringify(mass));
     }
   }
+
   useEffect(() => {
     new Request();
   },[bookName,bookType,maxResults,author,category,publisher]);
+
   return (
     <StyleRoot className="main__article beet2" style={animations.slideInLeft}>
       <p className="main__title blackTitle">Search for books</p>

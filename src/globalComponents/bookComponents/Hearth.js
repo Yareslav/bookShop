@@ -5,7 +5,7 @@ import {FavoriteBooksContext} from "../../screens/Cabinet/index";
 import compare from "../../functions/compare";
 const Hearth = ({data,style}) => {
   const isInFavorites = useMemo(() => {
-    const favoriteBooks = JSON.parse(localStorage.getItem("favoriteBooks"));
+    const favoriteBooks = JSON.parse(localStorage.getItem("favoriteBooks")) || [];
     for (let i = 0; i < favoriteBooks.length; i++) {
       if (compare(favoriteBooks[i], data)) return true;
     }
@@ -14,7 +14,7 @@ const Hearth = ({data,style}) => {
   const [liked, setLiked] = useState(isInFavorites);
   const setFavoriteBooks=useContext(FavoriteBooksContext);
   const clickHandler = () => {
-    const favoriteBooks = JSON.parse(localStorage.getItem("favoriteBooks"));
+    const favoriteBooks = JSON.parse(localStorage.getItem("favoriteBooks")) || [];
     if (!liked) favoriteBooks.push(data);
     else {
       let index;

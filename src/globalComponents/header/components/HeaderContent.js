@@ -3,7 +3,7 @@ import Facebook from "../../../assets/images/facebook.png";
 import Instagram from "../../../assets/images/instagram.png";
 import User from "../../../assets/images/user.png";
 const HeaderContent = ({linkClickHandler,activePage}) => {
-  const condition=JSON.parse(localStorage.getItem("registrationData")).isSignedIn;
+  const condition=JSON.parse(localStorage.getItem("registrationData"))?.isSignedIn;
   const getStyles=(data)=>{
     return (data==activePage) ? {opacity:0.5} : {};
   }
